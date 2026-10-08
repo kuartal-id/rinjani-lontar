@@ -1,14 +1,14 @@
 name: Build deploy branch
 
 # Hostinger Git deploy (see docs/DEPLOY.md). Hostinger has no Node, so on every push to
-# master this builds the release tree (Vite assets + production vendor/) and commits it to
+# main this builds the release tree (Vite assets + production vendor/) and commits it to
 # the `deploy` branch. hPanel > Git deploys `deploy` into public_html on its webhook; the
 # hPanel cron `php artisan app:post-deploy` then migrates and rebuilds caches.
 #
 # Uses only GITHUB_TOKEN (contents: write). No SSH, no other secrets.
 on:
   push:
-    branches: [master]
+    branches: [main]
   # Pull requests run the whole build and the Apache web-root check, but never publish.
   pull_request:
   workflow_dispatch: {}
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
-      - name: Checkout master
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
           path: src
@@ -66,7 +66,7 @@ jobs:
         run: sudo src/deploy/test-webroot-apache.sh release
 
       - name: Publish to the deploy branch (one orphan commit, force-pushed)
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -93,7 +93,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Wait for Hostinger to publish it (re-push on a failed clone)
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
