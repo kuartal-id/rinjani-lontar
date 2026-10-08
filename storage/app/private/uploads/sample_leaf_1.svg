@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100">
+  <rect width="800" height="1100" fill="#efe6d2"/>
+  <rect x="30" y="30" width="740" height="1040" rx="26" fill="#e6d9bd" stroke="#b39b6d" stroke-width="4"/>
+  <rect x="70" y="70" width="660" height="960" rx="14" fill="#f6efdd" stroke="#cbb27f" stroke-width="2"/>
+  <line x1="100" y1="120" x2="700" y2="120" stroke="#7a5c36" stroke-width="10" stroke-linecap="round"/>
+  <rect x="140" y="200" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.75"/><rect x="140" y="260" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.68"/><rect x="140" y="320" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.61"/><rect x="140" y="380" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.54"/><rect x="140" y="440" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.47"/><rect x="140" y="500" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.4"/><rect x="140" y="560" rx="10" ry="28" width="520" height="22" fill="#8a6f4d" opacity="0.33"/>
+  <text x="400" y="1020" text-anchor="middle" font-family="serif" font-size="40" fill="#7a5c36">Contoh / Sample — 1</text>
+</svg>

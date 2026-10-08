@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a29"/>
+      <stop offset="50%" stop-color="#1a233a"/>
+      <stop offset="100%" stop-color="#0f1523"/>
+    </linearGradient>
+    <linearGradient id="mountGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2ecc71" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1e8449" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="mountGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3498db" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1b4f72" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#e67e22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid lines -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="125" x2="800" y2="125"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="375" x2="800" y2="375"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Sun / Glow -->
+  <circle cx="400" cy="180" r="64" fill="url(#sunGrad)" opacity="0.25" filter="blur(20px)"/>
+  <circle cx="400" cy="180" r="48" fill="url(#sunGrad)" opacity="0.4"/>
+
+  <!-- Mountain Silhouettes -->
+  <!-- Back Mountain -->
+  <path d="M 120 420 L 320 210 L 460 330 L 620 180 L 780 420 Z" fill="url(#mountGrad2)"/>
+  <!-- Front Mountain (Rinjani Peak profile) -->
+  <path d="M 50 450 L 260 270 L 400 170 L 530 300 L 750 450 Z" fill="url(#mountGrad1)"/>
+
+  <!-- Lake / Reflection Base -->
+  <rect x="0" y="420" width="800" height="80" fill="rgba(15, 21, 35, 0.85)"/>
+  <line x1="0" y1="420" x2="800" y2="420" stroke="rgba(46, 204, 113, 0.3)" stroke-width="2"/>
+
+  <!-- Central Camera / Icon Indicator -->
+  <g transform="translate(400, 240)">
+    <circle cx="0" cy="0" r="38" fill="rgba(20, 26, 41, 0.85)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <!-- Camera SVG Path -->
+    <path d="M -14 -4 L -11 -9 L 11 -9 L 14 -4 L 18 -4 C 20 -4 21 -2 21 0 L 21 14 C 21 16 20 17 18 17 L -18 17 C -20 17 -21 16 -21 14 L -21 0 C -21 -2 -20 -4 -18 -4 Z" fill="none" stroke="#2ecc71" stroke-width="2.2" stroke-linejoin="round"/>
+    <circle cx="0" cy="6" r="6" fill="none" stroke="#2ecc71" stroke-width="2.2"/>
+    <circle cx="13" cy="0" r="1.5" fill="#2ecc71"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="320" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0" letter-spacing="1">DOKUMENTASI FOTO DALAM PROSES</text>
+  <text x="400" y="344" text-anchor="middle" font-family="'Segoe UI', Roboto, Helvetica, sans-serif" font-size="12" fill="#94a3b8" letter-spacing="0.5">Geopark Rinjani Lombok — UNESCO Global Geopark</text>
+</svg>
