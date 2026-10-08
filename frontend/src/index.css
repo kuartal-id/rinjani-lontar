@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --color-unesco-blue: #0A4D8C;
+  --color-unesco-green: #1B5E20;
+  --color-unesco-gray: #f9fafb;
+  --color-heritage-brown: #8D6E63;
+  --color-surface: #ffffff;
+  --color-background: #F4F7F6;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --shadow-elegant: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for better UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Museum Card styles */
+.museum-card {
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.museum-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  border-color: #e2e8f0;
+}
+
+/* Audio Player modern styling */
+audio {
+  border-radius: 8px;
+  height: 40px;
+  outline: none;
+  /* Always full-width so it doesn't overflow its container */
+  width: 100%;
+  max-width: 100%;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #f8fafc;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  background-color: #e2e8f0;
+  border-radius: 50%;
+}
+
+/* ── Touch-friendly interactive elements on mobile ── */
+@media (max-width: 767px) {
+  /* Minimum 44px touch target height for interactive elements */
+  button:not(.no-min-height),
+  [role="button"],
+  select {
+    min-height: 44px;
+  }
+}
+
+/* ── Lembar thumbnail strip (mobile horizontal scroll) ── */
+.lembar-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+  /* Prevent the strip from causing full-page horizontal scroll */
+  max-width: 100%;
+}
+
+.lembar-strip::-webkit-scrollbar {
+  height: 3px;
+}
+
+.lembar-strip::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 2px;
+}
+
+.lembar-strip > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ── Horizontal-scroll only inside table containers ── */
+.table-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* clip so the table scroll does not bleed out */
+  max-width: 100%;
+}
